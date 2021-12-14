@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-buildscript {
-  repositories {
-    mavenCentral()
+repositories {
     maven {
       url: "http://mill.jfrog.info:12601/artifactory/my-gradle-release-local/"
       allowInsecureProtocol = true
@@ -25,6 +23,11 @@ buildscript {
       url: "http://mill.jfrog.info:12601/artifactory/my-gradle-release/"
       allowInsecureProtocol = true
     }
+}
+
+buildscript {
+  repositories {
+    mavenCentral()
   }
 }
 
