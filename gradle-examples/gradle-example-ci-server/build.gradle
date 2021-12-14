@@ -14,17 +14,6 @@
  * limitations under the License.
  */
 
-repositories {
-    maven {
-      url: "http://mill.jfrog.info:12601/artifactory/my-gradle-release-local/"
-      allowInsecureProtocol = true
-    }
-    maven {
-      url: "http://mill.jfrog.info:12601/artifactory/my-gradle-release/"
-      allowInsecureProtocol = true
-    }
-}
-
 buildscript {
   repositories {
     mavenCentral()
@@ -38,6 +27,19 @@ allprojects {
   group = 'org.jfrog.example.gradle'
   version = '1.0'
   status = 'integration'
+  
+  publishing {
+    repositories {
+        maven {
+        url: "http://mill.jfrog.info:12601/artifactory/my-gradle-release-local/"
+        allowInsecureProtocol = true
+    }
+    maven {
+       url: "http://mill.jfrog.info:12601/artifactory/my-gradle-release/"
+       allowInsecureProtocol = true
+    }
+  }
+}
 }
 
 // Setting this property to true will make the artifactoryPublish task
