@@ -14,30 +14,9 @@
  * limitations under the License.
  */
 
- repositories {
-    mavenCentral()
-    maven {
-        url "http://mill.jfrog.info:12601/artifactory/my-gradle-release-local/"
-        allowInsecureProtocol = true
-    }
-    maven {
-       url "http://mill.jfrog.info:12601/artifactory/my-gradle-release/"
-       allowInsecureProtocol = true
-    }
- }
-
 buildscript {
   repositories {
     mavenCentral()
-    maven {
-        url "http://mill.jfrog.info:12601/artifactory/my-gradle-release-local/"
-        allowInsecureProtocol = true
-    }
-    maven {
-       url "http://mill.jfrog.info:12601/artifactory/my-gradle-release/"
-       allowInsecureProtocol = true
-    }
-  }
 }
 
 allprojects {
@@ -47,21 +26,8 @@ allprojects {
   group = 'org.jfrog.example.gradle'
   version = '1.0'
   status = 'integration'
-  
-  publishing {
-    repositories {
-        maven {
-        url "http://mill.jfrog.info:12601/artifactory/my-gradle-release-local/"
-        allowInsecureProtocol = true
-    }
-    maven {
-       url "http://mill.jfrog.info:12601/artifactory/my-gradle-release/"
-       allowInsecureProtocol = true
-    }
-  }
-}
 }
 
 // Setting this property to true will make the artifactoryPublish task
 // skip this module (in our case, the root module):
-artifactoryPublish.skip = false
+artifactoryPublish.skip = true
