@@ -31,11 +31,11 @@ allprojects {
   publishing {
     repositories {
         maven {
-        url: "http://mill.jfrog.info:12601/artifactory/my-gradle-release-local/"
+        url "http://mill.jfrog.info:12601/artifactory/my-gradle-release-local/"
         allowInsecureProtocol = true
     }
     maven {
-       url: "http://mill.jfrog.info:12601/artifactory/my-gradle-release/"
+       url "http://mill.jfrog.info:12601/artifactory/my-gradle-release/"
        allowInsecureProtocol = true
     }
   }
