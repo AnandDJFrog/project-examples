@@ -4,12 +4,12 @@ pipelines:
       - name: Release_approval
         type: Bash
         configuration:
-        requiresApproval:
-            timeoutSeconds: 43200 # if not approved in this timeframe, the step will be cancelled
-            approvers:
-                - admin
-        notifications:
-          - integrationName: test_slack # required Slack integration
-  execution:
-    onExecute:
-      - echo "executing step..."
+            requiresApproval:
+                timeoutSeconds: 43200 # if not approved in this timeframe, the step will be cancelled
+                approvers:
+                  - admin
+            notifications:
+              - integrationName: test_slack # required Slack integration
+        execution:
+            onExecute:
+              - echo "executing step..."
