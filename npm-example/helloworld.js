@@ -1,4 +1,5 @@
 var http = require('http');
+var electron = require('electron')
 
 http.createServer(function(req, res) {
   res.writeHead(200, {'Content-Type' : 'text/plain'});
